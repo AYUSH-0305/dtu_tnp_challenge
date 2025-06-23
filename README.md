@@ -1,92 +1,113 @@
-📚 TNP Recruitment Portal Frontend
-This is the frontend application for the TNP Recruitment Challenge, built with Vite + React. It includes:
+# Shareable TnP Dashboard
 
-🔐 Admin Panel (with login and shareable link generation)
+A modern, secure frontend dashboard built using React and Vite, allowing authenticated users to generate shareable tokens for data access and enabling public users to view shared TnP data without authentication.
 
-🌐 Public Share Page (to view student data)
+## 🚀 Features
 
-🔍 Email-based search functionality
+- 🔐 JWT-based authentication
+- 📄 Secure share token generation
+- 🌐 Public view via tokenized URLs
+- 🎨 Modern responsive UI/UX
+- 📊 Stylish tabular data views
+- ✅ Form validation using Zod
+- ♿ Accessibility and performance best practices
+- 🔁 Token refresh support
+- 🌈 Loading animations and error handling
 
-✅ Form validation via Zod
+## 📁 Project Structure
 
-🎨 Clean, responsive UI with custom CSS
+```
+├── public
+├── src
+│   ├── assets
+│   ├── components
+│   │   └── Table.jsx
+│   ├── pages
+│   │   ├── Admin.jsx
+│   │   └── PublicView.jsx
+│   ├── services
+│   │   └── api.js
+│   ├── styles
+│   │   ├── Admin.css
+│   │   ├── PublicView.css
+│   │   └── Table.css
+│   ├── utils
+│   │   └── auth.js
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   └── index.css
+├── .env
+├── .gitignore
+├── index.html
+├── package.json
+├── package-lock.json
+├── vercel.json
+└── README.md
+```
 
-🚀 Tech Stack
-React (with Vite)
+## 🛠️ Technologies Used
 
-Axios
+- React + Vite
+- Axios
+- React Router
+- Zod (Validation)
+- Vercel (Deployment)
 
-Zod (for validation)
+## 🔧 Setup Instructions
 
-CSS Modules / Plain CSS
+### 1. Clone the Repository
 
-React Router
+```bash
+git clone https://github.com/your-username/shareable-tnp-dashboard.git
+cd shareable-tnp-dashboard
+```
 
-📦 Project Structure
-src/
-│
-├── components/ # Reusable UI components (e.g. Table.jsx)
-├── pages/ # Page components (Admin.jsx, PublicView.jsx)
-├── services/ # Axios API configuration
-├── styles/ # CSS files
-├── utils/ # Utility functions (e.g. auth token management)
-└── main.jsx # App entry point
+### 2. Install Dependencies
 
-🔧 Environment Setup
-Clone the repository:
-
-bash
-Copy
-Edit
-git clone https://github.com/your-username/tnp-recruitment-frontend.git
-cd tnp-recruitment-frontend
-Install dependencies:
-
-bash
-Copy
-Edit
+```bash
 npm install
-Create a .env file at the root:
+```
 
-.env
+### 3. Add Environment Variable
 
-VITE_API_BASE_URL=https://your-backend-url.com/api
+Create a `.env` file at the root level:
 
-ℹ️ Replace the URL with your actual backend API base.
+```
+VITE_API_BASE_URL=https://tnp-recruitment-challenge.manitvig.live
+```
 
-▶️ Running the App
-Start the development server:
+### 4. Run Locally
 
-bash
-Copy
-Edit
+```bash
 npm run dev
-Visit: http://localhost:5173
+```
 
-🛠️ Build for Production
-bash
-Copy
-Edit
-npm run build
-Then preview the build:
+Visit: `http://localhost:5173`
 
-bash
-Copy
-Edit
-npm run preview
-🧪 Features Overview
-✅ Admin Login (validated via Zod)
-✅ Shareable Link Generation
-✅ Public Page Access via Token
-✅ Responsive Table View
-✅ Email Search Filter
-✅ Graceful Login Feedback (No browser popups)
-✅ Environment-based API Configuration
+## 🚀 Deployment (Vercel)
 
-🧑‍💻 Developer Notes
-Uses axios with import.meta.env.VITE_API_BASE_URL
+### Steps:
 
-Ensure backend CORS settings allow credentials from http://localhost:5173
+1. Push the code to a GitHub repository.
+2. Go to [vercel.com](https://vercel.com/) and import the repo.
+3. Set the environment variable `VITE_API_BASE_URL` in the Vercel dashboard.
+4. Ensure your project has a `vercel.json` file with this content:
 
-Do not expose the actual share tokens in public repos
+```json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+```
+
+This ensures proper routing with React Router for share token URLs.
+
+## 📚 Available Scripts
+
+- `npm run dev` — Run development server
+- `npm run build` — Build production files
+- `npm run preview` — Preview production build
+
 
